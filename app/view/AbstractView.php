@@ -3,10 +3,17 @@
 abstract class AbstractView {
 
     protected $viewData;
+    
+    /**
+     *@var mixed Data received via setData method
+     */
     protected $receivedData;
     protected $registry;
-    protected $links = [];
-    protected $scripts = [];
+    
+    /**
+     *@var array Arrays of links and scripts to add to head
+     */
+    protected $links = [], $scripts = [];
 
     /**
      * @var string $head    Contain path to file in template folder
@@ -25,6 +32,18 @@ abstract class AbstractView {
         $this->content = 'content.php';
         $this->footer = 'footer.php';
     }
+    
+    public function generateHTML() {
+        $this->viewData->set('links', $this->links);
+        $this->viewData->set('scripts', $this->scripts);
+
+        $this->generateHTMLPart($this->head);
+        $this->generateHTMLPart($this->header);
+        $this->generateHTMLPart($this->content);
+        $this->generateHTMLPart($this->footer);
+    }
+    
+    abstract public function setData();
 
     protected function generateHTMLPart($fileName) {
         $this->loadFile($fileName);
@@ -65,15 +84,4 @@ abstract class AbstractView {
         ];
         array_push($this->scripts, $script);
     }
-
-    public function generateHTML() {
-        $this->viewData->set('links', $this->links);
-        $this->viewData->set('scripts', $this->scripts);
-
-        $this->generateHTMLPart($this->head);
-        $this->generateHTMLPart($this->header);
-        $this->generateHTMLPart($this->content);
-        $this->generateHTMLPart($this->footer);
-    }
-
 }
