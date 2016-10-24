@@ -1,0 +1,27 @@
+#content {
+    text-align: center;
+}
+
+#center {
+    width: auto;
+    height: auto;
+    overflow: auto;
+    display: inline-block;
+    padding: 2em 5em 2em 5em;
+}
+
+#registration_form #td_left {
+    float: left;
+}
+
+#registration_form table {
+    border-spacing: 0.5em 0.5em;    
+}
+
+#input_email {
+    float: right;
+}
+
+td span {
+    color: #8e5e24;
+}

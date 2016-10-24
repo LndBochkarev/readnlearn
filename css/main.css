@@ -1,0 +1,119 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color: beige;
+    position: relative;
+    min-height: 100%;
+    margin-bottom: -0.5em;
+}
+
+#header {
+    margin: -0.5em -0.5em 0 -0.5em;
+    background-color: #8e5e24;
+    overflow: auto; 
+}
+
+#hbuttonHolder {
+    margin-left: 20%;
+    float: left;    
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.hbutton1 {
+    box-sizing: border-box;
+    height: 2.5em;
+    width: 8em;
+    border-radius: 15%/50%;
+    background-color: beige;
+    float: left;
+    margin: 0.7em 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hbutton1:hover {
+    background-color: white;
+    cursor: pointer;
+}
+
+.hbutton1 .textHolder {
+    font-size: 1.3em;
+}
+
+#login_form {
+    //align-self: flex-start;
+    margin: 0.3em 10% 0.3em 0;
+    overflow: hidden;
+    width: 11.1em;
+    float: right;
+    background-color: beige;
+    border-radius: 3em;
+    padding: 0 1.2em;
+    transition: width 0.5s;
+}
+
+#login_form .subutton {
+    height: 1.3em;
+    width: 4.7em;
+    border-radius:0.5em 1.5em 0 0.5em;
+    background-color: white;
+    border-style: solid;
+    border-color: #8e5e24;
+    border-width: 2px;
+    display: none;
+    font-family: inherit;
+    font-size: 1em;    
+    line-height: 1em;
+    box-sizing: border-box;
+}
+
+#login_form #rebutton {
+    border-radius:0.5em 0 1.5em 0.5em;
+    padding-left: 0.5em;
+}
+
+#login_form:hover {
+    width: 14.7em;
+}
+
+#login_form:hover .subutton{
+    display: block;    
+}
+
+#login_form td input {
+    width: 7em;
+    border: 2px solid #8e5e24;
+}
+
+#content {    
+    background-color: beige;
+    overflow: auto;    
+}
+
+#center {
+    overflow: auto;
+    width: 70%;
+    margin: auto;
+    background-color: white;
+    border-radius: 0 0 1em 1em;
+    padding: 1em;
+}
+
+footer {
+    margin: 0 -0.5em 0 -0.5em;
+    height: 2em;
+    background-color: #8e5e24;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+}
+

@@ -1,0 +1,37 @@
+#center {
+    background-color: inherit;
+    width: 1200px;
+}
+/* add flex */
+.db_table_div {
+    float: left;
+    background-color: #8e5e24;
+    border-radius: 2em;
+    margin: 1em 1em 0 1em;
+}
+
+.db_table {
+    background-color: white;
+    border-radius: 1em;
+    margin: 0 1em 1em 1em;
+    padding: 0.5em;
+    border-spacing: 0.5em 0;    
+}
+
+.db_th {
+    font-weight: bold;
+    padding-bottom: 0.5em;
+}
+
+.table_header {
+    background-color: beige;
+    border-radius: 0.5em;
+    margin: 1em 1em 1em 1em;
+    padding-left: 1em;
+}
+
+@media screen and (max-width: 1200px) {
+    #center {
+        width: 100%;
+    }
+}
