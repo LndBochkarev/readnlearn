@@ -1,2 +1,2 @@
 # www.readnlearn.ga
-# dbstructure is temporary page
+# dbstructure is a temporary page
