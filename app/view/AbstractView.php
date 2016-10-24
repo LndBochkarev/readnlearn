@@ -9,11 +9,6 @@ abstract class AbstractView {
     protected $scripts = [];
 
     /**
-     * It looks like I should use an array here, 
-     * but accessing to class variables feels better
-     * than accessing to array with name of variable
-     * for this my purpose
-     *
      * @var string $head    Contain path to file in template folder
      * @var string $header  Contain path to file in template folder
      * @var string $content Contain path to file in template folder
