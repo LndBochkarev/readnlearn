@@ -26,10 +26,8 @@ try {
      * replace with error handler
      */
     $error_msg = $ex->getMessage();
-    $registry['view_data']->set('error_message', $error_msg);
+    //$registry['view_data']['error_message'] = $error_msg;
+    setcookie('error_message', $error_msg);
 
-    $registry->remove('action');
-    $registry->set('action', 'index');
-    $router = new ActionRouter($registry);
-    $router->run();
+    header('location: index');
 }

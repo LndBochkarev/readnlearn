@@ -1,7 +1,7 @@
 <?php
 global $data;
 
-$structure = $data['dbstructure'];
+$structure = $data['content'];
 ?>
 
 <div id='content'>

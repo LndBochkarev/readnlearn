@@ -1,6 +1,12 @@
 <?php
 
-abstract class AbstractAction implements Action {
+/**
+ * Difference betweed this and usual action is in lack of View class
+ */
+abstract class AbstractAjaxAction implements Action {
+    
+    
+    
     protected $registry;
     
     /**
@@ -8,17 +14,11 @@ abstract class AbstractAction implements Action {
      */
     protected $model;
     
-    /**
-     * @var View
-     */
-    protected $view;
-    
     protected $userId;
 
     public function __construct($registry) {
         $this->registry = $registry;
         $this->model = new Model($registry);
-        $this->view = new View($registry);
         
         $this->userId = $this->getUserId();
         
