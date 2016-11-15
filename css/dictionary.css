@@ -1,3 +1,41 @@
 #center {
     background-color: inherit;
 }
+
+#translator {
+    border: solid 3px #8e5e24;
+    border-radius: 1em;
+    padding: 1em;
+    display: inline-block;
+}
+
+#translation_result, #translation_text {
+    min-width: 20em;
+    min-height: 4em;
+    box-sizing: border-box;
+    font-size: 1em;
+    font-family: sans-serif;
+    overflow: auto;
+}
+
+#translation_text {
+    
+}
+
+#translation_result {    
+    background-color: white;
+    display: inline-block;
+}
+
+#temporary_container {
+    display: inline-block;
+}
+
+#translate, #direction {
+    float: left;
+    clear: left;
+}
+
+#ya_ad {
+    float: right;
+}

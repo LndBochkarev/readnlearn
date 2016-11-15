@@ -47,7 +47,7 @@ a {
     font-size: 1.3em;
 }
 
-#login_form {
+#hlogin_form {
     //align-self: flex-start;
     margin: 0.3em 10% 0.3em 0;
     overflow: hidden;
@@ -59,7 +59,7 @@ a {
     transition: width 0.5s;
 }
 
-#login_form .subutton {
+#hlogin_form .subutton {
     height: 1.3em;
     width: 4.7em;
     border-radius:0.5em 1.5em 0 0.5em;
@@ -74,20 +74,20 @@ a {
     box-sizing: border-box;
 }
 
-#login_form #rebutton {
+#hlogin_form #rebutton {
     border-radius:0.5em 0 1.5em 0.5em;
     padding-left: 0.5em;
 }
 
-#login_form:hover {
+#hlogin_form:hover {
     width: 14.7em;
 }
 
-#login_form:hover .subutton{
+#hlogin_form:hover .subutton{
     display: block;    
 }
 
-#login_form td input {
+#hlogin_form td input {
     width: 7em;
     border: 2px solid #8e5e24;
 }
@@ -98,6 +98,7 @@ a {
 }
 
 #center {
+    box-sizing: border-box;
     overflow: auto;
     width: 70%;
     margin: auto;

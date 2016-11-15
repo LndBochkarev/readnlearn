@@ -15,7 +15,8 @@ class Registration extends AbstractAction {
 
 
 
-
+        $this->view->setContent('registration.php');
+        $this->view->addLink('registration.css');
         $this->view->generateHTML();
     }
 

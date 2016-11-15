@@ -1,4 +1,7 @@
-<?php ?>
+<?php
+global $registry;
+$data = $registry['view_data'];
+?>
 
 
 <body>
@@ -15,7 +18,7 @@
             </a>
         </div>
 
-        <div id="login_form">
+        <div id="hlogin_form">
             <form action="sign_in" method="post">
                 <table>
                     <tr>
@@ -44,5 +47,16 @@
                     </tr>
                 </table>
             </form>
-        </div>
+        </div>        
     </div>
+
+    <?php //temporary
+    if (isset($data['error_message'])) {
+        echo $data['error_message'] . '<br>';
+    }
+    $error_msg = filter_input(INPUT_COOKIE, 'error_message', FILTER_SANITIZE_STRING);
+    if ($error_msg) {
+        echo $error_msg;
+        setcookie('error_message', NULL, time() - 3600*24);
+    }
+    ?>

@@ -10,7 +10,7 @@ global $data;
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="css/main.css"/>
-        <script type="text/javascript" src="jquery-3.1.1.js"></script>
+        <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
 
         <?php
         if (isset($data['links'])) {

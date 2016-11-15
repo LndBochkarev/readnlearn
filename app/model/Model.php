@@ -7,7 +7,7 @@ class Model {
 
     /**
      * 
-     * @throws PDOException
+     * @throws PDOException //or not?
      */
     public function __construct($registry) {
         $this->registry = $registry;
@@ -34,14 +34,28 @@ class Model {
         $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
+    /**
+     * @return DBStructureQueryHandler
+     */
     public function getDBStructureQueryHandler() {
         $this->includeModelClass('DBStructureQueryHandler.php');
         return new DBStructureQueryHandler($this->registry, $this->db);
     }
     
+    /**
+     * @return UserQueryHandler
+     */
+    public function getUserQueryHandler() {
+        $this->includeModelClass('UserQueryHandler.php');
+        return new UserQueryHandler($this->registry, $this->db);
+    }
+    
+    /**
+     * @return UserDataHandler
+     */
     public function getUserDataHandler() {
         $this->includeModelClass('UserDataHandler.php');
-        return new UserDataHandler($this->registry, $this->db);
+        return new UserDataHandler();
     }
     
     private function includeModelClass($fileName) {

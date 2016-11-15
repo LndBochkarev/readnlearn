@@ -3,16 +3,7 @@
 abstract class AbstractView {
 
     protected $viewData;
-    
-    /**
-     *@var mixed Data received via setData method
-     */
-    protected $receivedData;
     protected $registry;
-    
-    /**
-     *@var array Arrays of links and scripts to add to head
-     */
     protected $links = [], $scripts = [];
 
     /**
@@ -33,6 +24,48 @@ abstract class AbstractView {
         $this->footer = 'footer.php';
     }
     
+    /**
+     * Adds the link tag to the header
+     * 
+     * @param string $href
+     * @param boolean $external
+     * @param string $rel
+     * @param string $type
+     */
+    public function addLink($href, $external = false, $rel = 'stylesheet', $type = 'text/css') {
+        //relative to index
+        if (!$external) {
+            $href = 'css/' . $href;
+        }
+
+        $link = [
+            'href' => $href,
+            'rel' => $rel,
+            'type' => $type
+        ];
+        array_push($this->links, $link);
+    }
+
+    /**
+     * Adds the script tag to the header
+     * 
+     * @param string $src
+     * @param boolean $external
+     * @param string $type
+     */
+    public function addScript($src, $external = false, $type = 'text/javascript') {
+        //relative to index
+        if (!$external) {
+            $src = 'js/' . $src;
+        }
+
+        $script = [
+            'src' => $src,
+            'type' => $type
+        ];
+        array_push($this->scripts, $script);
+    }
+    
     public function generateHTML() {
         $this->viewData->set('links', $this->links);
         $this->viewData->set('scripts', $this->scripts);
@@ -43,7 +76,7 @@ abstract class AbstractView {
         $this->generateHTMLPart($this->footer);
     }
     
-    abstract public function setData();
+    abstract public function setData($data);
 
     protected function generateHTMLPart($fileName) {
         $this->loadFile($fileName);
@@ -58,30 +91,5 @@ abstract class AbstractView {
         }
     }
 
-    protected function addLink($href, $external = false, $rel = 'stylesheet', $type = 'text/css') {
-        //relative to index
-        if (!$external) {
-            $href = 'css/' . $href;
-        }
-
-        $link = [
-            'href' => $href,
-            'rel' => $rel,
-            'type' => $type
-        ];
-        array_push($this->links, $link);
-    }
-
-    protected function addScript($src, $external = false, $type = 'text/javascript') {
-        //relative to index
-        if (!$external) {
-            $src = 'js/' . $src;
-        }
-
-        $script = [
-            'src' => $src,
-            'type' => $type
-        ];
-        array_push($this->scripts, $script);
-    }
+    
 }

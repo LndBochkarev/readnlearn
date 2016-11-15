@@ -1,6 +1,6 @@
 #center {
     background-color: inherit;
-    width: 1200px;
+    width: calc(1200px - 1em);
 }
 /* add flex */
 .db_table_div {
@@ -28,6 +28,7 @@
     border-radius: 0.5em;
     margin: 1em 1em 1em 1em;
     padding-left: 1em;
+    padding-right: 1em;
 }
 
 @media screen and (max-width: 1200px) {

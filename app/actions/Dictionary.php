@@ -7,32 +7,20 @@ class Dictionary extends AbstractAction {
     }
 
     public function execute() {
-        $view = new View($this->registry);
         
         
         
         //display translate window
         //select prev words
         //display them or nothing
+
+   
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        $view->generateHtml();
+        $this->view->setContent('dictionary.php');
+        $this->view->addLink('dictionary.css');
+        $this->view->addScript('translator.js');
+        $this->view->generateHtml();
     }
 
 }
