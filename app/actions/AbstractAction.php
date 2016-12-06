@@ -4,9 +4,9 @@ abstract class AbstractAction implements Action {
     protected $registry;
     
     /**
-     * @var Model
+     * @var QueryHandlerFactory
      */
-    protected $model;
+    protected $qhFactory;
     
     /**
      * @var View
@@ -17,8 +17,8 @@ abstract class AbstractAction implements Action {
 
     public function __construct($registry) {
         $this->registry = $registry;
-        $this->model = new Model($registry);
-        $this->view = new View($registry);
+        $this->qhFactory = new QueryHandlerFactory($registry);
+        $this->setView();
         
         $this->userId = $this->getUserId();
         
@@ -35,7 +35,9 @@ abstract class AbstractAction implements Action {
      * @return mixed
      */
     private function getUserId() {
-        session_start();
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
 
         if (isset($_SESSION['user_id'])) {
             $userId = $_SESSION['user_id'];
@@ -46,5 +48,12 @@ abstract class AbstractAction implements Action {
             }
             return false;
         }
+    }
+    
+    /**
+     * 
+     */
+    protected function setView() {
+        $this->view = new View($this->registry);
     }
 }

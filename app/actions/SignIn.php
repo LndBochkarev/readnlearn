@@ -9,6 +9,10 @@ class SignIn extends AbstractAction {
 
     public function execute() {
         
+        if ($this->userId) {
+            header('location: profile');
+        }
+        
         /**
          * @todo login fails counter
          *          for specified username/email
@@ -17,16 +21,9 @@ class SignIn extends AbstractAction {
          * 
          */
         
-        
-        
-        /**
-         * check data
-         * if invalid load registration again 
-         * if valid register the user and 
-         * direct him to the login page(location login)
-         * 
-         * 
-         */
+        //if invalid -> location:login
+        //if valid check the pass and login match
+        //if mathed -> direct to main page
         
         
         

@@ -9,7 +9,27 @@
     display: inline-block;
 }
 
-#translation_result, #translation_text {
+.text_field {
+    display: inline-block;
+    float: left;
+    margin: 0.2em;
+}
+
+.action_field {
+    clear: both;
+    height: 1.7em;
+}
+
+.action_field select {
+    float: left;
+}
+
+#translation_result {
+    display: inline-block;
+    overflow: auto;
+}
+
+#main_result, #translation_text {
     min-width: 20em;
     min-height: 4em;
     box-sizing: border-box;
@@ -22,18 +42,13 @@
     
 }
 
-#translation_result {    
+#main_result {    
     background-color: white;
-    display: inline-block;
-}
-
-#temporary_container {
     display: inline-block;
 }
 
 #translate, #direction {
     float: left;
-    clear: left;
 }
 
 #ya_ad {

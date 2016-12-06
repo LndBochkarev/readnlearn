@@ -16,13 +16,13 @@ class SignUp extends AbstractAction {
             header('location: profile');
         }
         
-        $udh = $this->model->getUserDataHandler();
+        $udh = DataHandlerFactory::getUserDataHandler();
         
         $data = $udh->prepareUserData();
         
         if ($data['is_valid']) {
             
-            $uqh = $this->model->getUserQueryHandler();
+            $uqh = $this->qhFactory->getUserQueryHandler();
             
             //working
             //$uqh->insertUser($data);
@@ -30,13 +30,14 @@ class SignUp extends AbstractAction {
             header('location: login');
             
         } else {
-            //view setData
-            //view setContent
+            //view set cookie or session
+            //session failed reg array
+            //if failed reg array exists
             
-            
+            header('location: registration');
         }
         
         
-        $this->view->generateHTML();
+        
     }
 }

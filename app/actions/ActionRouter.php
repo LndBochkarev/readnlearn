@@ -73,17 +73,19 @@ class ActionRouter {
     }
 
     private function includeFiles() {
-        $root = $this->registry['site_root'];
-        require_once $root . 'app/actions/Action.php';
+        $root = $this->registry['site_root'];        
+        require_once $root . 'app/actions/Action.php';     
+        require_once $root . 'app/actions/AbstractAction.php';
+        
         require_once $root . 'app/view/AbstractView.php';
         require_once $root . 'app/view/View.php';
-        require_once $root . 'app/model/Model.php';
-        require_once $root . 'app/model/AbstractQueryHandler.php';
+        
+        require_once $root . 'app/model/QueryHandlerFactory.php';
+        require_once $root . 'app/model/DataHandlerFactory.php';
+        require_once $root . 'app/model/AbstractQueryHandler.php';                
 
         if ($this->isAjax()) {
             require_once $root . 'app/actions/ajax/AbstractAjaxAction.php';
-        } else {
-            require_once $root . 'app/actions/AbstractAction.php';
         }
     }
 

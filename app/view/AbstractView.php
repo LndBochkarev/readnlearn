@@ -76,7 +76,7 @@ abstract class AbstractView {
         $this->generateHTMLPart($this->footer);
     }
     
-    abstract public function setData($data);
+    abstract public function setData($key, $data);
 
     protected function generateHTMLPart($fileName) {
         $this->loadFile($fileName);

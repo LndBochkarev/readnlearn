@@ -2,9 +2,7 @@
 
 class View extends AbstractView {
     /**
-     * 
-     * 
-     * 
+     * Provides a methods to manipulate HTML output 
      */
 
     /**
@@ -16,8 +14,9 @@ class View extends AbstractView {
     }
     
     /**
-     * Set data required for almost each page     * 
-     * @param type $data
+     * Set the data required for almost each page
+     * 
+     * @param mixed $data
      */
     public function setGeneralData($data) {
         
@@ -25,13 +24,20 @@ class View extends AbstractView {
     }
 
     /**
-     * Set data for page if needed
+     * Set the data for page if needed
+     * 
+     * @param string $key
      * @param mixed $data
      */
-    public function setData($data) {
-        $this->viewData->set('content', $data);
+    public function setData($key, $data) {
+        $this->viewData->set($key, $data);
     }   
     
+    /**
+     * Sets the HTML part between header and footer
+     * 
+     * @param type $content
+     */
     public function setContent($content) {
         $this->content = $content;
     }

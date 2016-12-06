@@ -8,13 +8,28 @@
 
 
         <div id="translator">
-
-            <textarea id="translation_text" type="text" name="translation_text" placeholder="Enter text to translate"></textarea>
-            <div id="temporary_container">
-                <span id="direction">en-ru</span>
-                <button id="translate">Translate</button>
+            
+            <div class="text_field">
+                <div class="action_field">
+                    <select>
+                        <option value="english">English</option>
+                    </select>
+                </div>
+                <textarea id="translation_text" type="text" name="translation_text" placeholder="Enter text to translate"></textarea>
             </div>
-            <span id="translation_result"></span>
+
+            <div class="text_field">
+                <div class="action_field">
+                    <select>
+                        <option value="english">Russian</option>
+                    </select>
+                    <button id="translate">Translate</button>
+                </div>
+                
+                <div id="translation_result">
+                    <span id="main_result"></span>
+                </div>
+            </div>
 
 
             <br>      

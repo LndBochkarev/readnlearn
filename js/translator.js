@@ -1,10 +1,20 @@
 
 $(document).ready(function () {
+
+    var langList = {
+        english: "en",
+        russian: "ru",
+    };
+
     $('#translate').click(function () {
         translate($('#translation_text').val());
     });
 
+    //$('#direction_change').click(changeDirection());
+
 });
+
+
 
 function translate(trText) {
 
@@ -12,7 +22,9 @@ function translate(trText) {
 
         data = $.parseJSON(data);
 
-        $('#translation_result').text(data['text']);
+        $('#main_result').text(data['text']);
+
+
 
         /*
          * @todo change tr direction
@@ -20,4 +32,12 @@ function translate(trText) {
          * @todo if several words -> save linebreaks
          */
     });
+}
+
+function setDirection() {
+
+}
+
+function swapDirection() {
+
 }

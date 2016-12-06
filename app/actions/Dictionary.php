@@ -19,7 +19,7 @@ class Dictionary extends AbstractAction {
         
         $this->view->setContent('dictionary.php');
         $this->view->addLink('dictionary.css');
-        $this->view->addScript('translator.js');
+        $this->view->addScript('translator.js?do=notCache' . time());
         $this->view->generateHtml();
     }
 

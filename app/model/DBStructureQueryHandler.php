@@ -3,8 +3,8 @@
 
 class DBStructureQueryHandler extends AbstractQueryHandler {
     
-    public function __construct($registry, $db) {
-        parent::__construct($registry, $db);
+    public function __construct($registry) {
+        parent::__construct($registry);
     }
     
     
